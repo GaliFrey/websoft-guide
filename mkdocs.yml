@@ -53,4 +53,5 @@ nav:
   - Материалы:
     - Шпаргалка по работе с полями XML в MS SQL: materials/mssql-xml-tutorial/index.md
     - Шпаргалка по работе с полями XML в Postgres: materials/postgres-xml-tutorial/index.md
+    - Как XQuery превращается в SQL: materials/xquery-to-sql/index.md
   - Контакты: contacts.md
