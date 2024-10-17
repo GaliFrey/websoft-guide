@@ -57,4 +57,5 @@ nav:
   - Разработки:
     - Выполнение скриптов при запуске сервера: developments/server_startup_scripts/index.md
     - Отслеживаем данные о перезагрузке сервера: developments/server_restart_info/index.md
+    - Настройка отправки СМС через систему WebTutor: developments/notification_system_prostor_sms/index.md
   - Контакты: contacts.md
