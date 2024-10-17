@@ -14,8 +14,8 @@ copyright: Copyright &copy; 2021 - 2024 Vladislav Zagoskin
 theme:
   name: material
   features:
-    - content.action.edit
-    - content.action.view
+    # - content.action.edit
+    # - content.action.view
     - content.code.annotate
     - content.code.copy
     - content.tabs.link
@@ -30,6 +30,8 @@ theme:
   font:
     text: Roboto
     code: Roboto Mono
+  icon:
+    repo: fontawesome/brands/github
 
 # Extensions
 markdown_extensions:
@@ -48,4 +50,6 @@ markdown_extensions:
 # Page tree
 nav:
   - Главная: index.md
+  - Материалы:
+    - Шпаргалка по работе с полями XML в MS SQL: materials/mssql-xml-tutorial/index.md
   - Контакты: contacts.md
