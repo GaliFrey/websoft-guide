@@ -1,0 +1,14 @@
+{
+  "name": "websoft-guide",
+  "version": "1.8.0",
+  "description": "Материалы по платформе WebSoft",
+  "license": "ISC",
+  "author": "Zagoskin Vladislav",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "start": "mkdocs serve",
+    "publish": "mkdocs gh-deploy -r github"
+  }
+}

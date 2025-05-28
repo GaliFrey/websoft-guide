@@ -51,9 +51,12 @@ markdown_extensions:
 nav:
   - Главная: index.md
   - Материалы:
-    - Шпаргалка по работе с полями XML в MS SQL: materials/mssql-xml-tutorial/index.md
-    - Шпаргалка по работе с полями XML в Postgres: materials/postgres-xml-tutorial/index.md
-    - Как XQuery превращается в SQL: materials/xquery-to-sql/index.md
+    - SQL/Xquery:
+      - Работа с XML в MS SQL: materials/mssql-xml-tutorial/index.md
+      - Работа с XML в Postgres: materials/postgres-xml-tutorial/index.md
+      - Как XQuery превращается в SQL: materials/xquery-to-sql/index.md
+    - .Net библиотеки:
+      - WebSoft.Zip.dll: materials/dotnet-websoft-zip/index.md
   - Разработки:
     - Выполнение скриптов при запуске сервера: developments/server_startup_scripts/index.md
     - Отслеживаем данные о перезагрузке сервера: developments/server_restart_info/index.md
