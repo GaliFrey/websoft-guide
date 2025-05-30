@@ -46,5 +46,10 @@ $ python -m pip install mkdocs-material
 
 Запускаем live-server проекта
 ```bash
-$ mkdocs serve
+$ npm run start
+```
+
+Публикуем на GitHubPage
+```bash
+$ npm run publish
 ```

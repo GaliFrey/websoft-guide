@@ -57,6 +57,7 @@ nav:
       - Как XQuery превращается в SQL: materials/xquery-to-sql/index.md
     - .Net библиотеки:
       - WebSoft.Zip.dll: materials/dotnet-websoft-zip/index.md
+      - WebSoft.RegExp.dll: materials/dotnet-websoft-regexp/index.md
   - Разработки:
     - Выполнение скриптов при запуске сервера: developments/server_startup_scripts/index.md
     - Отслеживаем данные о перезагрузке сервера: developments/server_restart_info/index.md
