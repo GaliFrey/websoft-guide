@@ -14,24 +14,59 @@ oZip = tools.get_object_assembly("Zip")
 
 ## Методы
 
-* [GetVersion()](#getversion) - Возвращает версию библиотеки.
-* [GetError()](#geterror) - Возвращает текст последней ошибки.
-* [Save()](#save) - Заглушка: метод возвращает 1, если архив открыт.
-* [Close()](#close) - Закрывает архив и освобождает ресурсы.
-* [CharSet](#charset) - Свойство с геттером и сеттером. Кодировка для имён файлов.
-* [CompressionLevel](#compressionlevel) - Свойство с геттером и сеттером. Уровень сжатия (0 — без сжатия, 1 — сжатие).
-* [SetCompressionLevel](#setcompressionlevel)(level) - Устанавливает уровень сжатия (0 — без сжатия, 1 — сжатие).
-* [CreateArchive(path)](#createarchive) - Создаёт новый ZIP-архив, удаляя старый при наличии.
-* [OpenArchive(path, access)](#openarchive) - Открывает архив с доступом на чтение.
-* [OpenOrCreate(path)](#openorcreate) - Открывает существующий архив или создаёт новый.
-* [AddFiles(path)](#addfileaddfiles) - Добавляет файлы по маске (*.ext) в корень архива.
-* [AddFile(path)](#addfileaddfiles) - То же самое, что AddFiles().
-* [AddFilesToPath(path, pathInArchive)](#addfilestopath) - Добавляет файлы с указанием папки в архиве.
-* [AddDirectory(path)](#adddirectory) - Добавляет все файлы и папки из указанной директории.
-* [AddDirectoryToPath(path, pathInArchive)](#adddirectorytopath) - То же самое, но с указанием относительного пути в архиве.
-* [Extract(outputPath)](#extract) - Извлекает всё содержимое архива в указанный каталог.
-* [ExtractFiles(path, dirInArchive, outputPath)](#extractfiles) - Извлекает файл из подкаталога архива.
-* [ListFiles()](#listfiles) - Возвращает список всех файлов в архиве.
+* [**GetVersion()**](#getversion)  
+    Возвращает версию библиотеки.
+
+* [**GetError()**](#geterror)  
+    Возвращает текст последней ошибки.
+
+* [**Save()**](#save)  
+    Заглушка: метод возвращает 1, если архив открыт.
+
+* [**Close()**](#close)  
+    Закрывает архив и освобождает ресурсы.
+
+* [**CharSet**](#charset)  
+    Свойство с геттером и сеттером. Кодировка для имён файлов.
+
+* [**CompressionLevel**](#compressionlevel)  
+    Свойство с геттером и сеттером. Уровень сжатия (0 — без сжатия, 1 — сжатие).
+
+* [**SetCompressionLevel(level)**](#setcompressionlevel)  
+    Устанавливает уровень сжатия (0 — без сжатия, 1 — сжатие).
+
+* [**CreateArchive(path)**](#createarchive)  
+    Создаёт новый ZIP-архив, удаляя старый при наличии.
+
+* [**OpenArchive(path, access)**](#openarchive)  
+    Открывает архив с доступом на чтение.
+
+* [**OpenOrCreate(path)**](#openorcreate)  
+    Открывает существующий архив или создаёт новый.
+
+* [**AddFiles(path)**](#addfileaddfiles)  
+    Добавляет файлы по маске (*.ext) в корень архива.
+
+* [**AddFile(path)**](#addfileaddfiles)  
+    То же самое, что AddFiles().
+
+* [**AddFilesToPath(path, pathInArchive)**](#addfilestopath)  
+    Добавляет файлы с указанием папки в архиве.
+
+* [**AddDirectory(path)**](#adddirectory)  
+    Добавляет все файлы и папки из указанной директории.
+
+* [**AddDirectoryToPath(path, pathInArchive)**](#adddirectorytopath)  
+    То же самое, но с указанием относительного пути в архиве.
+
+* [**Extract(outputPath)**](#extract)  
+    Извлекает всё содержимое архива в указанный каталог.
+
+* [**ExtractFiles(path, dirInArchive, outputPath)**](#extractfiles)  
+    Извлекает файл из подкаталога архива.
+
+* [**ListFiles()**](#listfiles)  
+    Возвращает список всех файлов в архиве.
 
 ### GetVersion
 

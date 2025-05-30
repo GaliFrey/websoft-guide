@@ -13,28 +13,28 @@ oRegExp = tools.get_object_assembly("RegExp")
 
 ## Методы
 
-- **GetVersion()**  
+- [**GetVersion()**](#getversion)  
     Возвращает версию сборки `WebSoft.RegExp.dll`.
 
-- **Pattern**  
+- [**Pattern**](#pattern)  
     Геттер/Сеттер. Шаблон регулярного выражения.
 
-- **Global**  
+- [**Global**](#global)  
     Геттер/Сеттер. Не используется в текущей реализации. Предположительно зарезервировано для расширения (например, аналог `g` в JavaScript).
 
-- **IgnoreCase**  
+- [**IgnoreCase**](#ignorecase)  
     Геттер/Сеттер. Влияет на чувствительность к регистру при поиске.
 
-- **MultiLine**  
+- [**MultiLine**](#multiline)  
     Геттер/Сеттер. Управляет тем, как символы начала `^` и конца строки `$` работают в многострочном режиме.
 
-- **IsMatch(source)**  
+- [**IsMatch(source)**](#ismatch)  
     Проверяет, соответствует ли хотя бы одна подстрока из `source` шаблону.
 
-- **Replace(source, repl)**  
+- [**Replace(source, repl)**](#replace)  
     Заменяет вхождения, соответствующие шаблону `Pattern`, на строку `repl` в переданной строке `source`.
 
-- **Execute(source)**  
+- [**Execute(source)**](#execute)  
     Выполняет поиск всех совпадений по шаблону в строке `source`, возвращает коллекцию совпадений.
 
 ### GetVersion
