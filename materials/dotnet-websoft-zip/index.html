@@ -1237,19 +1237,13 @@
 </ul>
 <h3 id="getversion">GetVersion</h3>
 <p>Возвращает текующую версию библиотеки</p>
-<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">Код</label><label for="__tabbed_1_2">Результат</label></div>
-<div class="tabbed-content">
-<div class="tabbed-block">
+<p><em>Код</em></p>
 <div class="language-js highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="nx">oZip</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">tools</span><span class="p">.</span><span class="nx">get_object_assembly</span><span class="p">(</span><span class="s2">&quot;Zip&quot;</span><span class="p">)</span>
 </span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="kd">var</span><span class="w"> </span><span class="nx">version</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">oZip</span><span class="p">.</span><span class="nx">GetVersion</span><span class="p">()</span>
 </span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="nx">alert</span><span class="p">(</span><span class="nx">version</span><span class="p">)</span>
 </span></code></pre></div>
-</div>
-<div class="tabbed-block">
+<p><em>Результат</em></p>
 <p><img alt="getversion_1" src="img/getversion_1.png" /></p>
-</div>
-</div>
-</div>
 <h3 id="geterror">GetError</h3>
 <p>Возвращает текст последней ошибки.</p>
 <div class="admonition warning">
@@ -1258,25 +1252,17 @@
 <p>Библиотека кешируется.</p>
 </div>
 <p>Для получения ошибки попытаемся открыть несуществующий архив</p>
-<div class="tabbed-set tabbed-alternate" data-tabs="2:2"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><div class="tabbed-labels"><label for="__tabbed_2_1">Код</label><label for="__tabbed_2_2">Результат</label></div>
-<div class="tabbed-content">
-<div class="tabbed-block">
+<p><em>Код</em></p>
 <div class="language-js highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="nx">oZip</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">tools</span><span class="p">.</span><span class="nx">get_object_assembly</span><span class="p">(</span><span class="s2">&quot;Zip&quot;</span><span class="p">)</span>
 </span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="c1">// Архив other.zip не существует</span>
 </span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="nx">oZip</span><span class="p">.</span><span class="nx">OpenArchive</span><span class="p">(</span><span class="nx">UrlToFilePath</span><span class="p">(</span><span class="s1">&#39;x-local://trash/other.zip&#39;</span><span class="p">))</span>
 </span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="nx">alert</span><span class="p">(</span><span class="nx">oZip</span><span class="p">.</span><span class="nx">GetError</span><span class="p">())</span>
 </span></code></pre></div>
-</div>
-<div class="tabbed-block">
+<p><em>Результат</em></p>
 <p><img alt="geterror_0" src="img/geterror_0.png" /></p>
-</div>
-</div>
-</div>
 <h3 id="save">Save</h3>
 <p>Используется в связке с <code>Close()</code> в коробочном коде. Но в <code>dll</code> он просто возвращает 1, если архив открыт.</p>
-<div class="tabbed-set tabbed-alternate" data-tabs="3:1"><input checked="checked" id="__tabbed_3_1" name="__tabbed_3" type="radio" /><div class="tabbed-labels"><label for="__tabbed_3_1">Код</label></div>
-<div class="tabbed-content">
-<div class="tabbed-block">
+<p><em>Код</em></p>
 <div class="language-js highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="nx">oZip</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">tools</span><span class="p">.</span><span class="nx">get_object_assembly</span><span class="p">(</span><span class="s2">&quot;Zip&quot;</span><span class="p">)</span>
 </span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>
 </span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="p">...</span>
@@ -1287,14 +1273,9 @@
 </span><span id="__span-3-8"><a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a><span class="nx">oZip</span><span class="p">.</span><span class="nx">Close</span><span class="p">()</span>
 </span><span id="__span-3-9"><a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a><span class="nx">oZip</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">null</span>
 </span></code></pre></div>
-</div>
-</div>
-</div>
 <h3 id="close">Close</h3>
 <p>Закрывает архив</p>
-<div class="tabbed-set tabbed-alternate" data-tabs="4:1"><input checked="checked" id="__tabbed_4_1" name="__tabbed_4" type="radio" /><div class="tabbed-labels"><label for="__tabbed_4_1">Код</label></div>
-<div class="tabbed-content">
-<div class="tabbed-block">
+<p><em>Код</em></p>
 <div class="language-js highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="nx">oZip</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">tools</span><span class="p">.</span><span class="nx">get_object_assembly</span><span class="p">(</span><span class="s2">&quot;Zip&quot;</span><span class="p">)</span>
 </span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>
 </span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="p">...</span>
@@ -1305,9 +1286,6 @@
 </span><span id="__span-4-8"><a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a><span class="nx">oZip</span><span class="p">.</span><span class="nx">Close</span><span class="p">()</span>
 </span><span id="__span-4-9"><a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a><span class="nx">oZip</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">null</span>
 </span></code></pre></div>
-</div>
-</div>
-</div>
 <h3 id="charset">CharSet</h3>
 <div class="admonition note">
 <p class="admonition-title">Информация</p>
@@ -1315,23 +1293,15 @@
 <p>Библиотека кешируется.</p>
 </div>
 <p>Использование в качестве геттера возвращает текущую кодировку по умолчанию</p>
-<div class="tabbed-set tabbed-alternate" data-tabs="5:2"><input checked="checked" id="__tabbed_5_1" name="__tabbed_5" type="radio" /><input id="__tabbed_5_2" name="__tabbed_5" type="radio" /><div class="tabbed-labels"><label for="__tabbed_5_1">Код</label><label for="__tabbed_5_2">Результат</label></div>
-<div class="tabbed-content">
-<div class="tabbed-block">
+<p><em>Код</em></p>
 <div class="language-js highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="nx">oZip</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">tools</span><span class="p">.</span><span class="nx">get_object_assembly</span><span class="p">(</span><span class="s2">&quot;Zip&quot;</span><span class="p">)</span>
 </span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="kd">var</span><span class="w"> </span><span class="nx">charset</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">oZip</span><span class="p">.</span><span class="nx">CharSet</span>
 </span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="nx">alert</span><span class="p">(</span><span class="nx">charset</span><span class="p">)</span>
 </span></code></pre></div>
-</div>
-<div class="tabbed-block">
+<p><em>Результат</em></p>
 <p><img alt="charset_getter_1" src="img/charset_getter_1.png" /></p>
-</div>
-</div>
-</div>
 <p>Использование в качестве сеттера - устанавливаем свою кодировку</p>
-<div class="tabbed-set tabbed-alternate" data-tabs="6:2"><input checked="checked" id="__tabbed_6_1" name="__tabbed_6" type="radio" /><input id="__tabbed_6_2" name="__tabbed_6" type="radio" /><div class="tabbed-labels"><label for="__tabbed_6_1">Код</label><label for="__tabbed_6_2">Результат</label></div>
-<div class="tabbed-content">
-<div class="tabbed-block">
+<p><em>Код</em></p>
 <div class="language-js highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="nx">oZip</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">tools</span><span class="p">.</span><span class="nx">get_object_assembly</span><span class="p">(</span><span class="s2">&quot;Zip&quot;</span><span class="p">)</span>
 </span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="kd">var</span><span class="w"> </span><span class="nx">charsetDefault</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">oZip</span><span class="p">.</span><span class="nx">CharSet</span>
 </span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="nx">alert</span><span class="p">(</span><span class="s2">&quot;Кодировка по умолчанию: &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nx">charsetDefault</span><span class="p">)</span>
@@ -1340,20 +1310,13 @@
 </span><span id="__span-6-6"><a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a><span class="kd">var</span><span class="w"> </span><span class="nx">charsetNew</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">oZip</span><span class="p">.</span><span class="nx">CharSet</span>
 </span><span id="__span-6-7"><a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a><span class="nx">alert</span><span class="p">(</span><span class="s2">&quot;Кодировка новая: &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nx">charsetNew</span><span class="p">)</span>
 </span></code></pre></div>
-</div>
-<div class="tabbed-block">
+<p><em>Результат</em></p>
 <p><img alt="charset_setter_1" src="img/charset_setter_1.png" /></p>
-</div>
-</div>
-</div>
 <p>При работе с файлами и папками в названии которых используется кириллица, необходимо менять кодировку на <code>utf-8</code>, иначе названия файлов превращаются в иероглифы</p>
 <p>Создадим архивы с кодировкой <code>windows-1251</code> и кодировкой <code>utf-8</code>. Посмотрим что вышло в каждом случае</p>
-<div class="tabbed-set tabbed-alternate" data-tabs="7:3"><input checked="checked" id="__tabbed_7_1" name="__tabbed_7" type="radio" /><input id="__tabbed_7_2" name="__tabbed_7" type="radio" /><input id="__tabbed_7_3" name="__tabbed_7" type="radio" /><div class="tabbed-labels"><label for="__tabbed_7_1">Структура данных</label><label for="__tabbed_7_2">Код создания архивов</label><label for="__tabbed_7_3">Результат</label></div>
-<div class="tabbed-content">
-<div class="tabbed-block">
+<p><em>Структура данных</em></p>
 <p><img alt="charset_structure" src="img/charset_structure.png" /></p>
-</div>
-<div class="tabbed-block">
+<p><em>Код создания архивов</em></p>
 <div class="language-js highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="nx">oZip</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">tools</span><span class="p">.</span><span class="nx">get_object_assembly</span><span class="p">(</span><span class="s2">&quot;Zip&quot;</span><span class="p">)</span>
 </span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="nx">oZip</span><span class="p">.</span><span class="nx">CharSet</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;windows-1251&quot;</span><span class="w"> </span><span class="c1">// &quot;utf-8&quot;, &quot;windows-1251&quot;</span>
 </span><span id="__span-7-3"><a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a><span class="nx">oZip</span><span class="p">.</span><span class="nx">OpenOrCreate</span><span class="p">(</span><span class="nx">UrlToFilePath</span><span class="p">(</span><span class="s1">&#39;x-local://trash/archiveWindows1251.zip&#39;</span><span class="p">))</span>
@@ -1370,18 +1333,14 @@
 </span><span id="__span-7-14"><a id="__codelineno-7-14" name="__codelineno-7-14" href="#__codelineno-7-14"></a><span class="nx">oZip</span><span class="p">.</span><span class="nx">Close</span><span class="p">()</span>
 </span><span id="__span-7-15"><a id="__codelineno-7-15" name="__codelineno-7-15" href="#__codelineno-7-15"></a><span class="nx">oZip</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">null</span>
 </span></code></pre></div>
-</div>
-<div class="tabbed-block">
-<p>Распаковываем арихивы <code>archiveWindows1251.zip</code> и <code>archiveUtf8.zip</code> и смотрим кодировку<br />
-<img alt="charset_unpack_win1251" src="img/charset_unpack_win1251.png" />
+<p><em>Результат</em></p>
+<p>Распаковываем арихивы <code>archiveWindows1251.zip</code> и <code>archiveUtf8.zip</code> и смотрим кодировку</p>
+<p><img alt="charset_unpack_win1251" src="img/charset_unpack_win1251.png" />
 <img alt="charset_unpack_utf8" src="img/charset_unpack_utf8.png" /></p>
 <div class="admonition note">
 <p class="admonition-title">Информация</p>
 <p>Все манипуляции распаковки производились стандартным распаковщиком Windows 11 и 7-zip.<br />
 При распаковке WinRar кодировка корректная</p>
-</div>
-</div>
-</div>
 </div>
 <h3 id="compressionlevel">CompressionLevel</h3>
 <div class="admonition note">
@@ -1390,23 +1349,15 @@
 <p>Библиотека кешируется.</p>
 </div>
 <p>Использование в качестве геттера возвращает текущий уровень сжатия</p>
-<div class="tabbed-set tabbed-alternate" data-tabs="8:2"><input checked="checked" id="__tabbed_8_1" name="__tabbed_8" type="radio" /><input id="__tabbed_8_2" name="__tabbed_8" type="radio" /><div class="tabbed-labels"><label for="__tabbed_8_1">Код</label><label for="__tabbed_8_2">Результат</label></div>
-<div class="tabbed-content">
-<div class="tabbed-block">
+<p><em>Код</em></p>
 <div class="language-js highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="nx">oZip</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">tools</span><span class="p">.</span><span class="nx">get_object_assembly</span><span class="p">(</span><span class="s2">&quot;Zip&quot;</span><span class="p">)</span>
 </span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a><span class="kd">var</span><span class="w"> </span><span class="nx">compressionLevel</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">oZip</span><span class="p">.</span><span class="nx">CompressionLevel</span>
 </span><span id="__span-8-3"><a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a><span class="nx">alert</span><span class="p">(</span><span class="s2">&quot;Сжатие по умолчанию: &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nx">compressionLevel</span><span class="p">)</span>
 </span></code></pre></div>
-</div>
-<div class="tabbed-block">
+<p><em>Результат</em></p>
 <p><img alt="compressionlevel_getter_1" src="img/compressionlevel_getter_1.png" /></p>
-</div>
-</div>
-</div>
 <p>Использование в качестве сеттера - устанавливаем своё сжатие</p>
-<div class="tabbed-set tabbed-alternate" data-tabs="9:2"><input checked="checked" id="__tabbed_9_1" name="__tabbed_9" type="radio" /><input id="__tabbed_9_2" name="__tabbed_9" type="radio" /><div class="tabbed-labels"><label for="__tabbed_9_1">Код</label><label for="__tabbed_9_2">Результат</label></div>
-<div class="tabbed-content">
-<div class="tabbed-block">
+<p><em>Код</em></p>
 <div class="language-js highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="nx">oZip</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">tools</span><span class="p">.</span><span class="nx">get_object_assembly</span><span class="p">(</span><span class="s2">&quot;Zip&quot;</span><span class="p">)</span>
 </span><span id="__span-9-2"><a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a><span class="kd">var</span><span class="w"> </span><span class="nx">compressionLevelDefault</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">oZip</span><span class="p">.</span><span class="nx">CompressionLevel</span>
 </span><span id="__span-9-3"><a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a><span class="nx">alert</span><span class="p">(</span><span class="s2">&quot;Сжатие по умолчанию: &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nx">compressionLevelDefault</span><span class="p">)</span>
@@ -1415,20 +1366,14 @@
 </span><span id="__span-9-6"><a id="__codelineno-9-6" name="__codelineno-9-6" href="#__codelineno-9-6"></a><span class="kd">var</span><span class="w"> </span><span class="nx">compressionLevelNew</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">oZip</span><span class="p">.</span><span class="nx">CompressionLevel</span>
 </span><span id="__span-9-7"><a id="__codelineno-9-7" name="__codelineno-9-7" href="#__codelineno-9-7"></a><span class="nx">alert</span><span class="p">(</span><span class="s2">&quot;Сжатие новое: &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nx">compressionLevelNew</span><span class="p">)</span>
 </span></code></pre></div>
-</div>
-<div class="tabbed-block">
+<p><em>Результат</em></p>
 <p><img alt="compressionlevel_setter_1" src="img/compressionlevel_setter_1.png" /></p>
-</div>
-</div>
-</div>
 <p>Измерения уровней сжатия в качестве эксперимента от 0 до 10 показали, что есть только 2 уровня 0 или 1.</p>
 <p><img alt="compresslevel_0_10" src="img/compresslevel_0_10.png" /></p>
 <h3 id="setcompressionlevel">SetCompressionLevel</h3>
 <p>Устанавливает уровень сжатия. Делает то же самое что и геттер <code>CompressionLevel</code>, только тут это метод с параметром.</p>
 <p>Возвращает <code>1</code> при успешной установке уровня сжатия и <code>0</code> - если что-то пошло не так</p>
-<div class="tabbed-set tabbed-alternate" data-tabs="10:2"><input checked="checked" id="__tabbed_10_1" name="__tabbed_10" type="radio" /><input id="__tabbed_10_2" name="__tabbed_10" type="radio" /><div class="tabbed-labels"><label for="__tabbed_10_1">Код</label><label for="__tabbed_10_2">Результат</label></div>
-<div class="tabbed-content">
-<div class="tabbed-block">
+<p><em>Код</em></p>
 <div class="language-js highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="nx">oZip</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">tools</span><span class="p">.</span><span class="nx">get_object_assembly</span><span class="p">(</span><span class="s2">&quot;Zip&quot;</span><span class="p">)</span>
 </span><span id="__span-10-2"><a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a><span class="nx">oZip</span><span class="p">.</span><span class="nx">SetCompressionLevel</span><span class="p">(</span><span class="mf">0</span><span class="p">)</span>
 </span><span id="__span-10-3"><a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a><span class="nx">oZip</span><span class="p">.</span><span class="nx">OpenOrCreate</span><span class="p">(</span><span class="nx">UrlToFilePath</span><span class="p">(</span><span class="s1">&#39;x-local://trash/archiveCompress_0.zip&#39;</span><span class="p">))</span>
@@ -1445,12 +1390,8 @@
 </span><span id="__span-10-14"><a id="__codelineno-10-14" name="__codelineno-10-14" href="#__codelineno-10-14"></a><span class="nx">oZip</span><span class="p">.</span><span class="nx">Close</span><span class="p">()</span>
 </span><span id="__span-10-15"><a id="__codelineno-10-15" name="__codelineno-10-15" href="#__codelineno-10-15"></a><span class="nx">oZip</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">null</span>
 </span></code></pre></div>
-</div>
-<div class="tabbed-block">
+<p><em>Результат</em></p>
 <p><img alt="setcompressionlevel_0" src="img/setcompressionlevel_0.png" /></p>
-</div>
-</div>
-</div>
 <h3 id="createarchive">CreateArchive</h3>
 <p>Создает пустой архив по переданному пути.<br />
 Возвращает <code>1</code> при успешном создании архива и <code>0</code> - если что-то пошло не так</p>
@@ -1462,21 +1403,15 @@
 <p class="admonition-title">ВАЖНО</p>
 <p>Если такой архив уже существует, то он будет удален и создан новый пустой</p>
 </div>
-<div class="tabbed-set tabbed-alternate" data-tabs="11:2"><input checked="checked" id="__tabbed_11_1" name="__tabbed_11" type="radio" /><input id="__tabbed_11_2" name="__tabbed_11" type="radio" /><div class="tabbed-labels"><label for="__tabbed_11_1">Код</label><label for="__tabbed_11_2">Результат</label></div>
-<div class="tabbed-content">
-<div class="tabbed-block">
+<p><em>Код</em></p>
 <div class="language-js highlight"><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="nx">oZip</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">tools</span><span class="p">.</span><span class="nx">get_object_assembly</span><span class="p">(</span><span class="s2">&quot;Zip&quot;</span><span class="p">)</span>
 </span><span id="__span-11-2"><a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a><span class="nx">oZip</span><span class="p">.</span><span class="nx">CreateArchive</span><span class="p">(</span><span class="nx">UrlToFilePath</span><span class="p">(</span><span class="s1">&#39;x-local://trash/archive.zip&#39;</span><span class="p">))</span>
 </span><span id="__span-11-3"><a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a><span class="nx">oZip</span><span class="p">.</span><span class="nx">Save</span><span class="p">()</span>
 </span><span id="__span-11-4"><a id="__codelineno-11-4" name="__codelineno-11-4" href="#__codelineno-11-4"></a><span class="nx">oZip</span><span class="p">.</span><span class="nx">Close</span><span class="p">()</span>
 </span><span id="__span-11-5"><a id="__codelineno-11-5" name="__codelineno-11-5" href="#__codelineno-11-5"></a><span class="nx">oZip</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">null</span>
 </span></code></pre></div>
-</div>
-<div class="tabbed-block">
+<p><em>Результат</em></p>
 <p><img alt="createarchive_0" src="img/createarchive_0.png" /></p>
-</div>
-</div>
-</div>
 <h3 id="openarchive">OpenArchive</h3>
 <p>Открывает существующий архив. Архив доступен только для чтения.<br />
 Возвращает <code>1</code> при успешном открытии архива и <code>0</code> - если что-то пошло не так</p>
@@ -1485,9 +1420,7 @@
 <p>Второй параметр <code>access</code> как будто-бы не работает, в dll указано 6 доступов открытия, но указание любого уровня вторым параметром генерирует ошибку</p>
 <p>CreateNew = 1, Create = 2, Open = 3, OpenOrCreate = 4, Truncate = 5, Append = 6,</p>
 </div>
-<div class="tabbed-set tabbed-alternate" data-tabs="12:2"><input checked="checked" id="__tabbed_12_1" name="__tabbed_12" type="radio" /><input id="__tabbed_12_2" name="__tabbed_12" type="radio" /><div class="tabbed-labels"><label for="__tabbed_12_1">Код</label><label for="__tabbed_12_2">Результат</label></div>
-<div class="tabbed-content">
-<div class="tabbed-block">
+<p><em>Код</em></p>
 <div class="language-js highlight"><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="nx">oZip</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">tools</span><span class="p">.</span><span class="nx">get_object_assembly</span><span class="p">(</span><span class="s2">&quot;Zip&quot;</span><span class="p">)</span>
 </span><span id="__span-12-2"><a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a><span class="nx">oZip</span><span class="p">.</span><span class="nx">OpenArchive</span><span class="p">(</span><span class="nx">UrlToFilePath</span><span class="p">(</span><span class="s1">&#39;x-local://trash/archive.zip&#39;</span><span class="p">))</span>
 </span><span id="__span-12-3"><a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a><span class="kd">var</span><span class="w"> </span><span class="nx">listFiles</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">oZip</span><span class="p">.</span><span class="nx">ListFiles</span><span class="p">()</span>
@@ -1497,17 +1430,11 @@
 </span><span id="__span-12-7"><a id="__codelineno-12-7" name="__codelineno-12-7" href="#__codelineno-12-7"></a><span class="nx">oZip</span><span class="p">.</span><span class="nx">Close</span><span class="p">()</span>
 </span><span id="__span-12-8"><a id="__codelineno-12-8" name="__codelineno-12-8" href="#__codelineno-12-8"></a><span class="nx">oZip</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">null</span>
 </span></code></pre></div>
-</div>
-<div class="tabbed-block">
+<p><em>Результат</em></p>
 <p><img alt="openarchive_0" src="img/openarchive_0.png" /></p>
-</div>
-</div>
-</div>
 <h3 id="openorcreate">OpenOrCreate</h3>
 <p>Метод позволяет открыть архив и дописать в него файлы, что нельзя сделать через <code>OpenArchive</code>. Если архив не существует, то метод его создает.</p>
-<div class="tabbed-set tabbed-alternate" data-tabs="13:2"><input checked="checked" id="__tabbed_13_1" name="__tabbed_13" type="radio" /><input id="__tabbed_13_2" name="__tabbed_13" type="radio" /><div class="tabbed-labels"><label for="__tabbed_13_1">Код</label><label for="__tabbed_13_2">Результат</label></div>
-<div class="tabbed-content">
-<div class="tabbed-block">
+<p><em>Код</em></p>
 <div class="language-js highlight"><pre><span></span><code><span id="__span-13-1"><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="nx">oZip</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">tools</span><span class="p">.</span><span class="nx">get_object_assembly</span><span class="p">(</span><span class="s2">&quot;Zip&quot;</span><span class="p">)</span>
 </span><span id="__span-13-2"><a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a><span class="nx">oZip</span><span class="p">.</span><span class="nx">CreateArchive</span><span class="p">(</span><span class="nx">UrlToFilePath</span><span class="p">(</span><span class="s1">&#39;x-local://trash/archive.zip&#39;</span><span class="p">))</span>
 </span><span id="__span-13-3"><a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a><span class="nx">oZip</span><span class="p">.</span><span class="nx">AddFile</span><span class="p">(</span><span class="nx">UrlToFilePath</span><span class="p">(</span><span class="s1">&#39;x-local://trash/test_structure/new document.txt&#39;</span><span class="p">))</span>
@@ -1522,20 +1449,13 @@
 </span><span id="__span-13-12"><a id="__codelineno-13-12" name="__codelineno-13-12" href="#__codelineno-13-12"></a><span class="nx">oZip</span><span class="p">.</span><span class="nx">Close</span><span class="p">()</span>
 </span><span id="__span-13-13"><a id="__codelineno-13-13" name="__codelineno-13-13" href="#__codelineno-13-13"></a><span class="nx">oZip</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">null</span>
 </span></code></pre></div>
-</div>
-<div class="tabbed-block">
+<p><em>Результат</em></p>
 <p><img alt="openorcreate_0" src="img/openorcreate_0.png" /></p>
-</div>
-</div>
-</div>
 <h3 id="addfileaddfiles">AddFile/AddFiles</h3>
 <p>Добавляем один файл</p>
-<div class="tabbed-set tabbed-alternate" data-tabs="14:3"><input checked="checked" id="__tabbed_14_1" name="__tabbed_14" type="radio" /><input id="__tabbed_14_2" name="__tabbed_14" type="radio" /><input id="__tabbed_14_3" name="__tabbed_14" type="radio" /><div class="tabbed-labels"><label for="__tabbed_14_1">Список файлов</label><label for="__tabbed_14_2">Код</label><label for="__tabbed_14_3">Результат</label></div>
-<div class="tabbed-content">
-<div class="tabbed-block">
+<p><em>Список файлов</em></p>
 <p><img alt="addfiles_files" src="img/addfiles_files.png" /></p>
-</div>
-<div class="tabbed-block">
+<p><em>Код</em></p>
 <div class="language-js highlight"><pre><span></span><code><span id="__span-14-1"><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a><span class="nx">oZip</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">tools</span><span class="p">.</span><span class="nx">get_object_assembly</span><span class="p">(</span><span class="s2">&quot;Zip&quot;</span><span class="p">)</span>
 </span><span id="__span-14-2"><a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a><span class="nx">oZip</span><span class="p">.</span><span class="nx">OpenOrCreate</span><span class="p">(</span><span class="nx">UrlToFilePath</span><span class="p">(</span><span class="s1">&#39;x-local://trash/archive.zip&#39;</span><span class="p">))</span>
 </span><span id="__span-14-3"><a id="__codelineno-14-3" name="__codelineno-14-3" href="#__codelineno-14-3"></a><span class="nx">oZip</span><span class="p">.</span><span class="nx">AddFile</span><span class="p">(</span><span class="nx">UrlToFilePath</span><span class="p">(</span><span class="s1">&#39;x-local://trash/test_structure/mask/file_1.txt&#39;</span><span class="p">))</span>
@@ -1544,19 +1464,12 @@
 </span><span id="__span-14-6"><a id="__codelineno-14-6" name="__codelineno-14-6" href="#__codelineno-14-6"></a><span class="nx">oZip</span><span class="p">.</span><span class="nx">Close</span><span class="p">()</span>
 </span><span id="__span-14-7"><a id="__codelineno-14-7" name="__codelineno-14-7" href="#__codelineno-14-7"></a><span class="nx">oZip</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">null</span>
 </span></code></pre></div>
-</div>
-<div class="tabbed-block">
+<p><em>Результат</em></p>
 <p><img alt="addfile_one" src="img/addfile_one.png" /></p>
-</div>
-</div>
-</div>
 <p>Добавляем несколько файлов используя символ подстановки <code>*</code></p>
-<div class="tabbed-set tabbed-alternate" data-tabs="15:3"><input checked="checked" id="__tabbed_15_1" name="__tabbed_15" type="radio" /><input id="__tabbed_15_2" name="__tabbed_15" type="radio" /><input id="__tabbed_15_3" name="__tabbed_15" type="radio" /><div class="tabbed-labels"><label for="__tabbed_15_1">Список файлов</label><label for="__tabbed_15_2">Код</label><label for="__tabbed_15_3">Результат</label></div>
-<div class="tabbed-content">
-<div class="tabbed-block">
+<p><em>Список файлов</em></p>
 <p><img alt="addfiles_files" src="img/addfiles_files.png" /></p>
-</div>
-<div class="tabbed-block">
+<p><em>Код</em></p>
 <div class="language-js highlight"><pre><span></span><code><span id="__span-15-1"><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a><span class="nx">oZip</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">tools</span><span class="p">.</span><span class="nx">get_object_assembly</span><span class="p">(</span><span class="s2">&quot;Zip&quot;</span><span class="p">)</span>
 </span><span id="__span-15-2"><a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a><span class="nx">oZip</span><span class="p">.</span><span class="nx">OpenOrCreate</span><span class="p">(</span><span class="nx">UrlToFilePath</span><span class="p">(</span><span class="s1">&#39;x-local://trash/archive.zip&#39;</span><span class="p">))</span>
 </span><span id="__span-15-3"><a id="__codelineno-15-3" name="__codelineno-15-3" href="#__codelineno-15-3"></a><span class="nx">oZip</span><span class="p">.</span><span class="nx">AddFile</span><span class="p">(</span><span class="nx">UrlToFilePath</span><span class="p">(</span><span class="s1">&#39;x-local://trash/test_structure/mask/*.txt&#39;</span><span class="p">))</span>
@@ -1565,19 +1478,12 @@
 </span><span id="__span-15-6"><a id="__codelineno-15-6" name="__codelineno-15-6" href="#__codelineno-15-6"></a><span class="nx">oZip</span><span class="p">.</span><span class="nx">Close</span><span class="p">()</span>
 </span><span id="__span-15-7"><a id="__codelineno-15-7" name="__codelineno-15-7" href="#__codelineno-15-7"></a><span class="nx">oZip</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">null</span>
 </span></code></pre></div>
-</div>
-<div class="tabbed-block">
+<p><em>Результат</em></p>
 <p><img alt="addfiles_txt_0" src="img/addfiles_txt_0.png" /></p>
-</div>
-</div>
-</div>
 <h3 id="addfilestopath">AddFilesToPath</h3>
-<div class="tabbed-set tabbed-alternate" data-tabs="16:3"><input checked="checked" id="__tabbed_16_1" name="__tabbed_16" type="radio" /><input id="__tabbed_16_2" name="__tabbed_16" type="radio" /><input id="__tabbed_16_3" name="__tabbed_16" type="radio" /><div class="tabbed-labels"><label for="__tabbed_16_1">Список файлов</label><label for="__tabbed_16_2">Код</label><label for="__tabbed_16_3">Результат</label></div>
-<div class="tabbed-content">
-<div class="tabbed-block">
+<p><em>Список файлов</em></p>
 <p><img alt="addfilestopath_files" src="img/addfilestopath_files.png" /></p>
-</div>
-<div class="tabbed-block">
+<p><em>Код</em></p>
 <div class="language-js highlight"><pre><span></span><code><span id="__span-16-1"><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a><span class="nx">oZip</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">tools</span><span class="p">.</span><span class="nx">get_object_assembly</span><span class="p">(</span><span class="s2">&quot;Zip&quot;</span><span class="p">)</span>
 </span><span id="__span-16-2"><a id="__codelineno-16-2" name="__codelineno-16-2" href="#__codelineno-16-2"></a><span class="nx">oZip</span><span class="p">.</span><span class="nx">CreateArchive</span><span class="p">(</span><span class="nx">UrlToFilePath</span><span class="p">(</span><span class="s1">&#39;x-local://trash/archive.zip&#39;</span><span class="p">))</span>
 </span><span id="__span-16-3"><a id="__codelineno-16-3" name="__codelineno-16-3" href="#__codelineno-16-3"></a><span class="nx">oZip</span><span class="p">.</span><span class="nx">AddFilesToPath</span><span class="p">(</span><span class="nx">UrlToFilePath</span><span class="p">(</span><span class="s1">&#39;x-local://trash/test_structure/mask/file_*.docx&#39;</span><span class="p">),</span><span class="w"> </span><span class="s1">&#39;deep_folder&#39;</span><span class="p">)</span>
@@ -1586,22 +1492,15 @@
 </span><span id="__span-16-6"><a id="__codelineno-16-6" name="__codelineno-16-6" href="#__codelineno-16-6"></a><span class="nx">oZip</span><span class="p">.</span><span class="nx">Close</span><span class="p">()</span>
 </span><span id="__span-16-7"><a id="__codelineno-16-7" name="__codelineno-16-7" href="#__codelineno-16-7"></a><span class="nx">oZip</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">null</span>
 </span></code></pre></div>
-</div>
-<div class="tabbed-block">
+<p><em>Результат</em></p>
 <div class="admonition info">
 <p class="admonition-title">Файлы в архиве находятся в папке <code>deep_folder</code></p>
 </div>
 <p><img alt="addfilestopath_0" src="img/addfilestopath_0.png" /></p>
-</div>
-</div>
-</div>
 <h3 id="adddirectory">AddDirectory</h3>
-<div class="tabbed-set tabbed-alternate" data-tabs="17:3"><input checked="checked" id="__tabbed_17_1" name="__tabbed_17" type="radio" /><input id="__tabbed_17_2" name="__tabbed_17" type="radio" /><input id="__tabbed_17_3" name="__tabbed_17" type="radio" /><div class="tabbed-labels"><label for="__tabbed_17_1">Список файлов</label><label for="__tabbed_17_2">Код</label><label for="__tabbed_17_3">Результат</label></div>
-<div class="tabbed-content">
-<div class="tabbed-block">
+<p><em>Список файлов</em></p>
 <p><img alt="adddirectory_structure" src="img/adddirectory_structure.png" /></p>
-</div>
-<div class="tabbed-block">
+<p><em>Код</em></p>
 <div class="language-js highlight"><pre><span></span><code><span id="__span-17-1"><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a><span class="nx">oZip</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">tools</span><span class="p">.</span><span class="nx">get_object_assembly</span><span class="p">(</span><span class="s2">&quot;Zip&quot;</span><span class="p">)</span>
 </span><span id="__span-17-2"><a id="__codelineno-17-2" name="__codelineno-17-2" href="#__codelineno-17-2"></a><span class="nx">oZip</span><span class="p">.</span><span class="nx">CreateArchive</span><span class="p">(</span><span class="nx">UrlToFilePath</span><span class="p">(</span><span class="s1">&#39;x-local://trash/archive.zip&#39;</span><span class="p">))</span>
 </span><span id="__span-17-3"><a id="__codelineno-17-3" name="__codelineno-17-3" href="#__codelineno-17-3"></a><span class="nx">oZip</span><span class="p">.</span><span class="nx">AddDirectory</span><span class="p">(</span><span class="nx">UrlToFilePath</span><span class="p">(</span><span class="s1">&#39;x-local://trash/test_structure&#39;</span><span class="p">))</span>
@@ -1610,19 +1509,12 @@
 </span><span id="__span-17-6"><a id="__codelineno-17-6" name="__codelineno-17-6" href="#__codelineno-17-6"></a><span class="nx">oZip</span><span class="p">.</span><span class="nx">Close</span><span class="p">()</span>
 </span><span id="__span-17-7"><a id="__codelineno-17-7" name="__codelineno-17-7" href="#__codelineno-17-7"></a><span class="nx">oZip</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">null</span>
 </span></code></pre></div>
-</div>
-<div class="tabbed-block">
+<p><em>Результат</em></p>
 <p><img alt="adddirectory_0" src="img/adddirectory_0.png" /></p>
-</div>
-</div>
-</div>
 <h3 id="adddirectorytopath">AddDirectoryToPath</h3>
-<div class="tabbed-set tabbed-alternate" data-tabs="18:3"><input checked="checked" id="__tabbed_18_1" name="__tabbed_18" type="radio" /><input id="__tabbed_18_2" name="__tabbed_18" type="radio" /><input id="__tabbed_18_3" name="__tabbed_18" type="radio" /><div class="tabbed-labels"><label for="__tabbed_18_1">Список файлов</label><label for="__tabbed_18_2">Код</label><label for="__tabbed_18_3">Результат</label></div>
-<div class="tabbed-content">
-<div class="tabbed-block">
+<p><em>Список файлов</em></p>
 <p><img alt="adddirectorytopath_structure" src="img/adddirectorytopath_structure.png" /></p>
-</div>
-<div class="tabbed-block">
+<p><em>Код</em></p>
 <div class="language-js highlight"><pre><span></span><code><span id="__span-18-1"><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a><span class="nx">oZip</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">tools</span><span class="p">.</span><span class="nx">get_object_assembly</span><span class="p">(</span><span class="s2">&quot;Zip&quot;</span><span class="p">)</span>
 </span><span id="__span-18-2"><a id="__codelineno-18-2" name="__codelineno-18-2" href="#__codelineno-18-2"></a><span class="nx">oZip</span><span class="p">.</span><span class="nx">CreateArchive</span><span class="p">(</span><span class="nx">UrlToFilePath</span><span class="p">(</span><span class="s1">&#39;x-local://trash/archive.zip&#39;</span><span class="p">))</span>
 </span><span id="__span-18-3"><a id="__codelineno-18-3" name="__codelineno-18-3" href="#__codelineno-18-3"></a><span class="nx">oZip</span><span class="p">.</span><span class="nx">AddDirectoryToPath</span><span class="p">(</span><span class="nx">UrlToFilePath</span><span class="p">(</span><span class="s1">&#39;x-local://trash/test_structure&#39;</span><span class="p">),</span><span class="w"> </span><span class="s1">&#39;deep_folder&#39;</span><span class="p">)</span>
@@ -1631,16 +1523,10 @@
 </span><span id="__span-18-6"><a id="__codelineno-18-6" name="__codelineno-18-6" href="#__codelineno-18-6"></a><span class="nx">oZip</span><span class="p">.</span><span class="nx">Close</span><span class="p">()</span>
 </span><span id="__span-18-7"><a id="__codelineno-18-7" name="__codelineno-18-7" href="#__codelineno-18-7"></a><span class="nx">oZip</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">null</span>
 </span></code></pre></div>
-</div>
-<div class="tabbed-block">
+<p><em>Результат</em></p>
 <p><img alt="adddirectorytopath_0" src="img/adddirectorytopath_0.png" /></p>
-</div>
-</div>
-</div>
 <h3 id="extract">Extract</h3>
-<div class="tabbed-set tabbed-alternate" data-tabs="19:2"><input checked="checked" id="__tabbed_19_1" name="__tabbed_19" type="radio" /><input id="__tabbed_19_2" name="__tabbed_19" type="radio" /><div class="tabbed-labels"><label for="__tabbed_19_1">Код</label><label for="__tabbed_19_2">Результат</label></div>
-<div class="tabbed-content">
-<div class="tabbed-block">
+<p><em>Код</em></p>
 <div class="language-js highlight"><pre><span></span><code><span id="__span-19-1"><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a><span class="nx">oZip</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">tools</span><span class="p">.</span><span class="nx">get_object_assembly</span><span class="p">(</span><span class="s2">&quot;Zip&quot;</span><span class="p">)</span>
 </span><span id="__span-19-2"><a id="__codelineno-19-2" name="__codelineno-19-2" href="#__codelineno-19-2"></a><span class="nx">oZip</span><span class="p">.</span><span class="nx">OpenArchive</span><span class="p">(</span><span class="nx">UrlToFilePath</span><span class="p">(</span><span class="s1">&#39;x-local://trash/archive.zip&#39;</span><span class="p">))</span>
 </span><span id="__span-19-3"><a id="__codelineno-19-3" name="__codelineno-19-3" href="#__codelineno-19-3"></a><span class="nx">oZip</span><span class="p">.</span><span class="nx">Extract</span><span class="p">(</span><span class="nx">UrlToFilePath</span><span class="p">(</span><span class="s1">&#39;x-local://trash/extract_archive/&#39;</span><span class="p">))</span>
@@ -1648,21 +1534,15 @@
 </span><span id="__span-19-5"><a id="__codelineno-19-5" name="__codelineno-19-5" href="#__codelineno-19-5"></a><span class="nx">oZip</span><span class="p">.</span><span class="nx">Close</span><span class="p">()</span>
 </span><span id="__span-19-6"><a id="__codelineno-19-6" name="__codelineno-19-6" href="#__codelineno-19-6"></a><span class="nx">oZip</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">null</span>
 </span></code></pre></div>
-</div>
-<div class="tabbed-block">
+<p><em>Результат</em></p>
 <p><img alt="extract_0" src="img/extract_0.png" /></p>
-</div>
-</div>
-</div>
 <h3 id="extractfiles">ExtractFiles</h3>
 <div class="admonition warning">
 <p class="admonition-title">ВАЖНО</p>
 <p>Первый параметр - не используется.<br />
 Второй параметр - путь к файлу относительно корня архива. Подстановки не работают</p>
 </div>
-<div class="tabbed-set tabbed-alternate" data-tabs="20:2"><input checked="checked" id="__tabbed_20_1" name="__tabbed_20" type="radio" /><input id="__tabbed_20_2" name="__tabbed_20" type="radio" /><div class="tabbed-labels"><label for="__tabbed_20_1">Код</label><label for="__tabbed_20_2">Результат</label></div>
-<div class="tabbed-content">
-<div class="tabbed-block">
+<p><em>Код</em></p>
 <div class="language-js highlight"><pre><span></span><code><span id="__span-20-1"><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a><span class="nx">oZip</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">tools</span><span class="p">.</span><span class="nx">get_object_assembly</span><span class="p">(</span><span class="s2">&quot;Zip&quot;</span><span class="p">)</span>
 </span><span id="__span-20-2"><a id="__codelineno-20-2" name="__codelineno-20-2" href="#__codelineno-20-2"></a><span class="nx">oZip</span><span class="p">.</span><span class="nx">OpenArchive</span><span class="p">(</span><span class="nx">UrlToFilePath</span><span class="p">(</span><span class="s1">&#39;x-local://trash/archive.zip&#39;</span><span class="p">))</span>
 </span><span id="__span-20-3"><a id="__codelineno-20-3" name="__codelineno-20-3" href="#__codelineno-20-3"></a><span class="nx">oZip</span><span class="p">.</span><span class="nx">ExtractFiles</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;mask/file_1.txt&#39;</span><span class="p">,</span><span class="w"> </span><span class="nx">UrlToFilePath</span><span class="p">(</span><span class="s1">&#39;x-local://trash/testUnzipFolder&#39;</span><span class="p">))</span>
@@ -1670,16 +1550,10 @@
 </span><span id="__span-20-5"><a id="__codelineno-20-5" name="__codelineno-20-5" href="#__codelineno-20-5"></a><span class="nx">oZip</span><span class="p">.</span><span class="nx">Close</span><span class="p">()</span>
 </span><span id="__span-20-6"><a id="__codelineno-20-6" name="__codelineno-20-6" href="#__codelineno-20-6"></a><span class="nx">oZip</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">null</span>
 </span></code></pre></div>
-</div>
-<div class="tabbed-block">
+<p><em>Результат</em></p>
 <p><img alt="extractfiles_0" src="img/extractfiles_0.png" /></p>
-</div>
-</div>
-</div>
 <h3 id="listfiles">ListFiles</h3>
-<div class="tabbed-set tabbed-alternate" data-tabs="21:2"><input checked="checked" id="__tabbed_21_1" name="__tabbed_21" type="radio" /><input id="__tabbed_21_2" name="__tabbed_21" type="radio" /><div class="tabbed-labels"><label for="__tabbed_21_1">Код</label><label for="__tabbed_21_2">Результат</label></div>
-<div class="tabbed-content">
-<div class="tabbed-block">
+<p><em>Код</em></p>
 <div class="language-js highlight"><pre><span></span><code><span id="__span-21-1"><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a><span class="nx">oZip</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">tools</span><span class="p">.</span><span class="nx">get_object_assembly</span><span class="p">(</span><span class="s2">&quot;Zip&quot;</span><span class="p">)</span>
 </span><span id="__span-21-2"><a id="__codelineno-21-2" name="__codelineno-21-2" href="#__codelineno-21-2"></a><span class="nx">oZip</span><span class="p">.</span><span class="nx">OpenArchive</span><span class="p">(</span><span class="nx">UrlToFilePath</span><span class="p">(</span><span class="s1">&#39;x-local://trash/archive.zip&#39;</span><span class="p">))</span>
 </span><span id="__span-21-3"><a id="__codelineno-21-3" name="__codelineno-21-3" href="#__codelineno-21-3"></a><span class="kd">var</span><span class="w"> </span><span class="nx">listFiles</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">oZip</span><span class="p">.</span><span class="nx">ListFiles</span><span class="p">()</span>
@@ -1688,12 +1562,8 @@
 </span><span id="__span-21-6"><a id="__codelineno-21-6" name="__codelineno-21-6" href="#__codelineno-21-6"></a><span class="nx">oZip</span><span class="p">.</span><span class="nx">Close</span><span class="p">()</span>
 </span><span id="__span-21-7"><a id="__codelineno-21-7" name="__codelineno-21-7" href="#__codelineno-21-7"></a><span class="nx">oZip</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">null</span>
 </span></code></pre></div>
-</div>
-<div class="tabbed-block">
+<p><em>Результат</em></p>
 <p><img alt="listfiles_0" src="img/listfiles_0.png" /></p>
-</div>
-</div>
-</div>
 
 
 
