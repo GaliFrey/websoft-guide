@@ -37,15 +37,17 @@ oZip = tools.get_object_assembly("Zip")
 
 Возвращает текующую версию библиотеки
 
-=== "Код"
-    ```js
-    oZip = tools.get_object_assembly("Zip")
-    var version = oZip.GetVersion()
-    alert(version)
-    ```
+_Код_
 
-=== "Результат"
-    ![getversion_1](./img/getversion_1.png)
+```js
+oZip = tools.get_object_assembly("Zip")
+var version = oZip.GetVersion()
+alert(version)
+```
+
+_Результат_
+
+![getversion_1](./img/getversion_1.png)
 
 ### GetError
 
@@ -58,49 +60,54 @@ oZip = tools.get_object_assembly("Zip")
 
 Для получения ошибки попытаемся открыть несуществующий архив
 
-=== "Код"
-    ```js
-    oZip = tools.get_object_assembly("Zip")
-    // Архив other.zip не существует
-    oZip.OpenArchive(UrlToFilePath('x-local://trash/other.zip'))
-    alert(oZip.GetError())
-    ```
-=== "Результат"
-    ![geterror_0](./img/geterror_0.png)
+_Код_
+
+```js
+oZip = tools.get_object_assembly("Zip")
+// Архив other.zip не существует
+oZip.OpenArchive(UrlToFilePath('x-local://trash/other.zip'))
+alert(oZip.GetError())
+```
+
+_Результат_
+
+![geterror_0](./img/geterror_0.png)
 
 ### Save
 
 Используется в связке с `Close()` в коробочном коде. Но в `dll` он просто возвращает 1, если архив открыт.
 
-=== "Код"
-    ```js
-    oZip = tools.get_object_assembly("Zip")
+_Код_
 
-    ...
-    // Работа с архивом
-    ...
+```js
+oZip = tools.get_object_assembly("Zip")
 
-    oZip.Save()
-    oZip.Close()
-    oZip = null
-    ```
+...
+// Работа с архивом
+...
+
+oZip.Save()
+oZip.Close()
+oZip = null
+```
 
 ### Close
 
 Закрывает архив
 
-=== "Код"
-    ```js
-    oZip = tools.get_object_assembly("Zip")
+_Код_
 
-    ...
-    // Работа с архивом
-    ...
+```js
+oZip = tools.get_object_assembly("Zip")
 
-    oZip.Save()
-    oZip.Close()
-    oZip = null
-    ```
+...
+// Работа с архивом
+...
+
+oZip.Save()
+oZip.Close()
+oZip = null
+```
 
 ### CharSet
 
@@ -111,62 +118,74 @@ oZip = tools.get_object_assembly("Zip")
 
 Использование в качестве геттера возвращает текущую кодировку по умолчанию
 
-=== "Код"
-    ```js
-    oZip = tools.get_object_assembly("Zip")
-    var charset = oZip.CharSet
-    alert(charset)
-    ```
-=== "Результат"
-    ![charset_getter_1](./img/charset_getter_1.png)
+_Код_
+
+```js
+oZip = tools.get_object_assembly("Zip")
+var charset = oZip.CharSet
+alert(charset)
+```
+
+_Результат_
+
+![charset_getter_1](./img/charset_getter_1.png)
 
 Использование в качестве сеттера - устанавливаем свою кодировку
 
-=== "Код"
-    ```js
-    oZip = tools.get_object_assembly("Zip")
-    var charsetDefault = oZip.CharSet
-    alert("Кодировка по умолчанию: " + charsetDefault)
+_Код_
 
-    oZip.CharSet = "utf-8"
-    var charsetNew = oZip.CharSet
-    alert("Кодировка новая: " + charsetNew)
-    ```
-=== "Результат"
-    ![charset_setter_1](./img/charset_setter_1.png)
+```js
+oZip = tools.get_object_assembly("Zip")
+var charsetDefault = oZip.CharSet
+alert("Кодировка по умолчанию: " + charsetDefault)
+
+oZip.CharSet = "utf-8"
+var charsetNew = oZip.CharSet
+alert("Кодировка новая: " + charsetNew)
+```
+
+_Результат_
+
+![charset_setter_1](./img/charset_setter_1.png)
 
 При работе с файлами и папками в названии которых используется кириллица, необходимо менять кодировку на `utf-8`, иначе названия файлов превращаются в иероглифы
 
 Создадим архивы с кодировкой `windows-1251` и кодировкой `utf-8`. Посмотрим что вышло в каждом случае
 
-=== "Структура данных"
-    ![charset_structure](./img/charset_structure.png)
-=== "Код создания архивов"
-    ```js
-    oZip = tools.get_object_assembly("Zip")
-    oZip.CharSet = "windows-1251" // "utf-8", "windows-1251"
-    oZip.OpenOrCreate(UrlToFilePath('x-local://trash/archiveWindows1251.zip'))
-    oZip.AddDirectory(UrlToFilePath('x-local://trash/test_structure'))
-    oZip.Save()
-    oZip.Close()
-    oZip = null
+_Структура данных_
 
-    oZip = tools.get_object_assembly("Zip")
-    oZip.CharSet = "utf-8" // "utf-8", "windows-1251"
-    oZip.OpenOrCreate(UrlToFilePath('x-local://trash/archiveUtf8.zip'))
-    oZip.AddDirectory(UrlToFilePath('x-local://trash/test_structure'))
-    oZip.Save()
-    oZip.Close()
-    oZip = null
-    ```
-=== "Результат"
-    Распаковываем арихивы `archiveWindows1251.zip` и `archiveUtf8.zip` и смотрим кодировку  
-    ![charset_unpack_win1251](./img/charset_unpack_win1251.png)
-    ![charset_unpack_utf8](./img/charset_unpack_utf8.png)
+![charset_structure](./img/charset_structure.png)
 
-    !!! note "Информация"
-        Все манипуляции распаковки производились стандартным распаковщиком Windows 11 и 7-zip.  
-        При распаковке WinRar кодировка корректная
+_Код создания архивов_
+
+```js
+oZip = tools.get_object_assembly("Zip")
+oZip.CharSet = "windows-1251" // "utf-8", "windows-1251"
+oZip.OpenOrCreate(UrlToFilePath('x-local://trash/archiveWindows1251.zip'))
+oZip.AddDirectory(UrlToFilePath('x-local://trash/test_structure'))
+oZip.Save()
+oZip.Close()
+oZip = null
+
+oZip = tools.get_object_assembly("Zip")
+oZip.CharSet = "utf-8" // "utf-8", "windows-1251"
+oZip.OpenOrCreate(UrlToFilePath('x-local://trash/archiveUtf8.zip'))
+oZip.AddDirectory(UrlToFilePath('x-local://trash/test_structure'))
+oZip.Save()
+oZip.Close()
+oZip = null
+```
+
+_Результат_
+
+Распаковываем арихивы `archiveWindows1251.zip` и `archiveUtf8.zip` и смотрим кодировку
+
+![charset_unpack_win1251](./img/charset_unpack_win1251.png)
+![charset_unpack_utf8](./img/charset_unpack_utf8.png)
+
+!!! note "Информация"
+    Все манипуляции распаковки производились стандартным распаковщиком Windows 11 и 7-zip.  
+    При распаковке WinRar кодировка корректная
 
 ### CompressionLevel
 
@@ -177,29 +196,35 @@ oZip = tools.get_object_assembly("Zip")
 
 Использование в качестве геттера возвращает текущий уровень сжатия
 
-=== "Код"
-    ```js
-    oZip = tools.get_object_assembly("Zip")
-    var compressionLevel = oZip.CompressionLevel
-    alert("Сжатие по умолчанию: " + compressionLevel)
-    ```
-=== "Результат"
-    ![compressionlevel_getter_1](./img/compressionlevel_getter_1.png)
+_Код_
+
+```js
+oZip = tools.get_object_assembly("Zip")
+var compressionLevel = oZip.CompressionLevel
+alert("Сжатие по умолчанию: " + compressionLevel)
+```
+
+_Результат_
+
+![compressionlevel_getter_1](./img/compressionlevel_getter_1.png)
 
 Использование в качестве сеттера - устанавливаем своё сжатие
 
-=== "Код"
-    ```js
-    oZip = tools.get_object_assembly("Zip")
-    var compressionLevelDefault = oZip.CompressionLevel
-    alert("Сжатие по умолчанию: " + compressionLevelDefault)
+_Код_
 
-    oZip.CompressionLevel = 0
-    var compressionLevelNew = oZip.CompressionLevel
-    alert("Сжатие новое: " + compressionLevelNew)
-    ```
-=== "Результат"
-    ![compressionlevel_setter_1](./img/compressionlevel_setter_1.png)
+```js
+oZip = tools.get_object_assembly("Zip")
+var compressionLevelDefault = oZip.CompressionLevel
+alert("Сжатие по умолчанию: " + compressionLevelDefault)
+
+oZip.CompressionLevel = 0
+var compressionLevelNew = oZip.CompressionLevel
+alert("Сжатие новое: " + compressionLevelNew)
+```
+
+_Результат_
+
+![compressionlevel_setter_1](./img/compressionlevel_setter_1.png)
 
 Измерения уровней сжатия в качестве эксперимента от 0 до 10 показали, что есть только 2 уровня 0 или 1.
 
@@ -211,26 +236,29 @@ oZip = tools.get_object_assembly("Zip")
 
 Возвращает `1` при успешной установке уровня сжатия и `0` - если что-то пошло не так
 
-=== "Код"
-    ```js
-    oZip = tools.get_object_assembly("Zip")
-    oZip.SetCompressionLevel(0)
-    oZip.OpenOrCreate(UrlToFilePath('x-local://trash/archiveCompress_0.zip'))
-    oZip.AddDirectory(UrlToFilePath('x-local://trash/test_structure'))
-    oZip.Save()
-    oZip.Close()
-    oZip = null
+_Код_
 
-    oZip = tools.get_object_assembly("Zip")
-    oZip.SetCompressionLevel(1)
-    oZip.OpenOrCreate(UrlToFilePath('x-local://trash/archiveCompress_1.zip'))
-    oZip.AddDirectory(UrlToFilePath('x-local://trash/test_structure'))
-    oZip.Save()
-    oZip.Close()
-    oZip = null
-    ```
-=== "Результат"
-    ![setcompressionlevel_0](./img/setcompressionlevel_0.png)
+```js
+oZip = tools.get_object_assembly("Zip")
+oZip.SetCompressionLevel(0)
+oZip.OpenOrCreate(UrlToFilePath('x-local://trash/archiveCompress_0.zip'))
+oZip.AddDirectory(UrlToFilePath('x-local://trash/test_structure'))
+oZip.Save()
+oZip.Close()
+oZip = null
+
+oZip = tools.get_object_assembly("Zip")
+oZip.SetCompressionLevel(1)
+oZip.OpenOrCreate(UrlToFilePath('x-local://trash/archiveCompress_1.zip'))
+oZip.AddDirectory(UrlToFilePath('x-local://trash/test_structure'))
+oZip.Save()
+oZip.Close()
+oZip = null
+```
+
+_Результат_
+
+![setcompressionlevel_0](./img/setcompressionlevel_0.png)
 
 ### CreateArchive
 
@@ -243,165 +271,202 @@ oZip = tools.get_object_assembly("Zip")
 !!! warning "ВАЖНО"
     Если такой архив уже существует, то он будет удален и создан новый пустой
 
-=== "Код"
-    ```js
-    oZip = tools.get_object_assembly("Zip")
-    oZip.CreateArchive(UrlToFilePath('x-local://trash/archive.zip'))
-    oZip.Save()
-    oZip.Close()
-    oZip = null
-    ```
-=== "Результат"
-    ![createarchive_0](./img/createarchive_0.png)
+_Код_
+
+```js
+oZip = tools.get_object_assembly("Zip")
+oZip.CreateArchive(UrlToFilePath('x-local://trash/archive.zip'))
+oZip.Save()
+oZip.Close()
+oZip = null
+```
+
+_Результат_
+
+![createarchive_0](./img/createarchive_0.png)
 
 ### OpenArchive
 
 Открывает существующий архив. Архив доступен только для чтения.  
 Возвращает `1` при успешном открытии архива и `0` - если что-то пошло не так
 
-!!! info "Информация"
+!!! note "Информация"
     Второй параметр `access` как будто-бы не работает, в dll указано 6 доступов открытия, но указание любого уровня вторым параметром генерирует ошибку
 
     CreateNew = 1, Create = 2, Open = 3, OpenOrCreate = 4, Truncate = 5, Append = 6,
 
-=== "Код"
-    ```js
-    oZip = tools.get_object_assembly("Zip")
-    oZip.OpenArchive(UrlToFilePath('x-local://trash/archive.zip'))
-    var listFiles = oZip.ListFiles()
-    alert(tools.object_to_text(listFiles, "json"))
+_Код_
 
-    oZip.Save()
-    oZip.Close()
-    oZip = null
-    ```
-=== "Результат"
-    ![openarchive_0](./img/openarchive_0.png)
+```js
+oZip = tools.get_object_assembly("Zip")
+oZip.OpenArchive(UrlToFilePath('x-local://trash/archive.zip'))
+var listFiles = oZip.ListFiles()
+alert(tools.object_to_text(listFiles, "json"))
+
+oZip.Save()
+oZip.Close()
+oZip = null
+```
+
+_Результат_
+
+![openarchive_0](./img/openarchive_0.png)
 
 ### OpenOrCreate
 
 Метод позволяет открыть архив и дописать в него файлы, что нельзя сделать через `OpenArchive`. Если архив не существует, то метод его создает.
 
-=== "Код"
-    ```js
-    oZip = tools.get_object_assembly("Zip")
-    oZip.CreateArchive(UrlToFilePath('x-local://trash/archive.zip'))
-    oZip.AddFile(UrlToFilePath('x-local://trash/test_structure/new document.txt'))
-    oZip.Save()
-    oZip.Close()
-    oZip = null
+_Код_
 
-    oZip = tools.get_object_assembly("Zip")
-    oZip.OpenOrCreate(UrlToFilePath('x-local://trash/archive.zip'))
-    oZip.AddFile(UrlToFilePath('x-local://trash/test_structure/wtv_tools.xml'))
-    oZip.Save()
-    oZip.Close()
-    oZip = null
-    ```
-=== "Результат"
-    ![openorcreate_0](./img/openorcreate_0.png)
+```js
+oZip = tools.get_object_assembly("Zip")
+oZip.CreateArchive(UrlToFilePath('x-local://trash/archive.zip'))
+oZip.AddFile(UrlToFilePath('x-local://trash/test_structure/new document.txt'))
+oZip.Save()
+oZip.Close()
+oZip = null
+
+oZip = tools.get_object_assembly("Zip")
+oZip.OpenOrCreate(UrlToFilePath('x-local://trash/archive.zip'))
+oZip.AddFile(UrlToFilePath('x-local://trash/test_structure/wtv_tools.xml'))
+oZip.Save()
+oZip.Close()
+oZip = null
+```
+
+_Результат_
+
+![openorcreate_0](./img/openorcreate_0.png)
 
 ### AddFile/AddFiles
 
 Добавляем один файл
 
-=== "Список файлов"
-    ![addfiles_files](./img/addfiles_files.png)
-=== "Код"
-    ```js
-    oZip = tools.get_object_assembly("Zip")
-    oZip.OpenOrCreate(UrlToFilePath('x-local://trash/archive.zip'))
-    oZip.AddFile(UrlToFilePath('x-local://trash/test_structure/mask/file_1.txt'))
+_Список файлов_
 
-    oZip.Save()
-    oZip.Close()
-    oZip = null
-    ```
-=== "Результат"
-    ![addfile_one](./img/addfile_one.png)
+![addfiles_files](./img/addfiles_files.png)
+
+_Код_
+
+```js
+oZip = tools.get_object_assembly("Zip")
+oZip.OpenOrCreate(UrlToFilePath('x-local://trash/archive.zip'))
+oZip.AddFile(UrlToFilePath('x-local://trash/test_structure/mask/file_1.txt'))
+
+oZip.Save()
+oZip.Close()
+oZip = null
+```
+
+_Результат_
+
+![addfile_one](./img/addfile_one.png)
 
 Добавляем несколько файлов используя символ подстановки `*`
 
-=== "Список файлов"
-    ![addfiles_files](./img/addfiles_files.png)
-=== "Код"
-    ```js
-    oZip = tools.get_object_assembly("Zip")
-    oZip.OpenOrCreate(UrlToFilePath('x-local://trash/archive.zip'))
-    oZip.AddFile(UrlToFilePath('x-local://trash/test_structure/mask/*.txt'))
+_Список файлов_
 
-    oZip.Save()
-    oZip.Close()
-    oZip = null
-    ```
-=== "Результат"
-    ![addfiles_txt_0](./img/addfiles_txt_0.png)
+![addfiles_files](./img/addfiles_files.png)
+
+_Код_
+
+```js
+oZip = tools.get_object_assembly("Zip")
+oZip.OpenOrCreate(UrlToFilePath('x-local://trash/archive.zip'))
+oZip.AddFile(UrlToFilePath('x-local://trash/test_structure/mask/*.txt'))
+
+oZip.Save()
+oZip.Close()
+oZip = null
+```
+
+_Результат_
+
+![addfiles_txt_0](./img/addfiles_txt_0.png)
 
 ### AddFilesToPath
 
-=== "Список файлов"
-    ![addfilestopath_files](./img/addfilestopath_files.png)
-=== "Код"
-    ```js
-    oZip = tools.get_object_assembly("Zip")
-    oZip.CreateArchive(UrlToFilePath('x-local://trash/archive.zip'))
-    oZip.AddFilesToPath(UrlToFilePath('x-local://trash/test_structure/mask/file_*.docx'), 'deep_folder')
+_Список файлов_
 
-    oZip.Save()
-    oZip.Close()
-    oZip = null
-    ```
-=== "Результат"
-    !!! info "Файлы в архиве находятся в папке `deep_folder`"
-    ![addfilestopath_0](./img/addfilestopath_0.png)
+![addfilestopath_files](./img/addfilestopath_files.png)
+
+_Код_
+
+```js
+oZip = tools.get_object_assembly("Zip")
+oZip.CreateArchive(UrlToFilePath('x-local://trash/archive.zip'))
+oZip.AddFilesToPath(UrlToFilePath('x-local://trash/test_structure/mask/file_*.docx'), 'deep_folder')
+
+oZip.Save()
+oZip.Close()
+oZip = null
+```
+
+_Результат_
+
+!!! note "Файлы в архиве находятся в папке `deep_folder`"
+![addfilestopath_0](./img/addfilestopath_0.png)
 
 ### AddDirectory
 
-=== "Список файлов"
-    ![adddirectory_structure](./img/adddirectory_structure.png)
-=== "Код"
-    ```js
-    oZip = tools.get_object_assembly("Zip")
-    oZip.CreateArchive(UrlToFilePath('x-local://trash/archive.zip'))
-    oZip.AddDirectory(UrlToFilePath('x-local://trash/test_structure'))
+_Список файлов_
 
-    oZip.Save()
-    oZip.Close()
-    oZip = null
-    ```
-=== "Результат"
-    ![adddirectory_0](./img/adddirectory_0.png)
+![adddirectory_structure](./img/adddirectory_structure.png)
+
+_Код_
+
+```js
+oZip = tools.get_object_assembly("Zip")
+oZip.CreateArchive(UrlToFilePath('x-local://trash/archive.zip'))
+oZip.AddDirectory(UrlToFilePath('x-local://trash/test_structure'))
+
+oZip.Save()
+oZip.Close()
+oZip = null
+```
+
+_Результат_
+
+![adddirectory_0](./img/adddirectory_0.png)
 
 ### AddDirectoryToPath
 
-=== "Список файлов"
-    ![adddirectorytopath_structure](./img/adddirectorytopath_structure.png)
-=== "Код"
-    ```js
-    oZip = tools.get_object_assembly("Zip")
-    oZip.CreateArchive(UrlToFilePath('x-local://trash/archive.zip'))
-    oZip.AddDirectoryToPath(UrlToFilePath('x-local://trash/test_structure'), 'deep_folder')
+_Список файлов_
 
-    oZip.Save()
-    oZip.Close()
-    oZip = null
-    ```
-=== "Результат"
-    ![adddirectorytopath_0](./img/adddirectorytopath_0.png)
+![adddirectorytopath_structure](./img/adddirectorytopath_structure.png)
+
+_Код_
+
+```js
+oZip = tools.get_object_assembly("Zip")
+oZip.CreateArchive(UrlToFilePath('x-local://trash/archive.zip'))
+oZip.AddDirectoryToPath(UrlToFilePath('x-local://trash/test_structure'), 'deep_folder')
+
+oZip.Save()
+oZip.Close()
+oZip = null
+```
+
+_Результат_
+
+![adddirectorytopath_0](./img/adddirectorytopath_0.png)
 
 ### Extract
 
-=== "Код"
-    ```js
-    oZip = tools.get_object_assembly("Zip")
-    oZip.OpenArchive(UrlToFilePath('x-local://trash/archive.zip'))
-    oZip.Extract(UrlToFilePath('x-local://trash/extract_archive/'))
+_Код_
 
-    oZip.Close()
-    oZip = null
-    ```
-=== "Результат"
-    ![extract_0](./img/extract_0.png)
+```js
+oZip = tools.get_object_assembly("Zip")
+oZip.OpenArchive(UrlToFilePath('x-local://trash/archive.zip'))
+oZip.Extract(UrlToFilePath('x-local://trash/extract_archive/'))
+
+oZip.Close()
+oZip = null
+```
+
+_Результат_
+
+![extract_0](./img/extract_0.png)
 
 ### ExtractFiles
 
@@ -409,29 +474,35 @@ oZip = tools.get_object_assembly("Zip")
     Первый параметр - не используется.  
     Второй параметр - путь к файлу относительно корня архива. Подстановки не работают
 
-=== "Код"
-    ```js
-    oZip = tools.get_object_assembly("Zip")
-    oZip.OpenArchive(UrlToFilePath('x-local://trash/archive.zip'))
-    oZip.ExtractFiles('', 'mask/file_1.txt', UrlToFilePath('x-local://trash/testUnzipFolder'))
+_Код_
 
-    oZip.Close()
-    oZip = null
-    ```
-=== "Результат"
-    ![extractfiles_0](./img/extractfiles_0.png)
+```js
+oZip = tools.get_object_assembly("Zip")
+oZip.OpenArchive(UrlToFilePath('x-local://trash/archive.zip'))
+oZip.ExtractFiles('', 'mask/file_1.txt', UrlToFilePath('x-local://trash/testUnzipFolder'))
+
+oZip.Close()
+oZip = null
+```
+
+_Результат_
+
+![extractfiles_0](./img/extractfiles_0.png)
 
 ### ListFiles
 
-=== "Код"
-    ```js
-    oZip = tools.get_object_assembly("Zip")
-    oZip.OpenArchive(UrlToFilePath('x-local://trash/archive.zip'))
-    var listFiles = oZip.ListFiles()
-    alert(tools.object_to_text(listFiles, "json"))
+_Код_
 
-    oZip.Close()
-    oZip = null
-    ```
-=== "Результат"
-    ![listfiles_0](./img/listfiles_0.png)
+```js
+oZip = tools.get_object_assembly("Zip")
+oZip.OpenArchive(UrlToFilePath('x-local://trash/archive.zip'))
+var listFiles = oZip.ListFiles()
+alert(tools.object_to_text(listFiles, "json"))
+
+oZip.Close()
+oZip = null
+```
+
+_Результат_
+
+![listfiles_0](./img/listfiles_0.png)
