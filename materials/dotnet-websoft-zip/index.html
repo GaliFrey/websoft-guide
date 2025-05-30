@@ -1239,24 +1239,78 @@
 </span></code></pre></div></p>
 <h2 id="_2">Методы</h2>
 <ul>
-<li><a href="#getversion">GetVersion()</a> - Возвращает версию библиотеки.</li>
-<li><a href="#geterror">GetError()</a> - Возвращает текст последней ошибки.</li>
-<li><a href="#save">Save()</a> - Заглушка: метод возвращает 1, если архив открыт.</li>
-<li><a href="#close">Close()</a> - Закрывает архив и освобождает ресурсы.</li>
-<li><a href="#charset">CharSet</a> - Свойство с геттером и сеттером. Кодировка для имён файлов.</li>
-<li><a href="#compressionlevel">CompressionLevel</a> - Свойство с геттером и сеттером. Уровень сжатия (0 — без сжатия, 1 — сжатие).</li>
-<li><a href="#setcompressionlevel">SetCompressionLevel</a>(level) - Устанавливает уровень сжатия (0 — без сжатия, 1 — сжатие).</li>
-<li><a href="#createarchive">CreateArchive(path)</a> - Создаёт новый ZIP-архив, удаляя старый при наличии.</li>
-<li><a href="#openarchive">OpenArchive(path, access)</a> - Открывает архив с доступом на чтение.</li>
-<li><a href="#openorcreate">OpenOrCreate(path)</a> - Открывает существующий архив или создаёт новый.</li>
-<li><a href="#addfileaddfiles">AddFiles(path)</a> - Добавляет файлы по маске (*.ext) в корень архива.</li>
-<li><a href="#addfileaddfiles">AddFile(path)</a> - То же самое, что AddFiles().</li>
-<li><a href="#addfilestopath">AddFilesToPath(path, pathInArchive)</a> - Добавляет файлы с указанием папки в архиве.</li>
-<li><a href="#adddirectory">AddDirectory(path)</a> - Добавляет все файлы и папки из указанной директории.</li>
-<li><a href="#adddirectorytopath">AddDirectoryToPath(path, pathInArchive)</a> - То же самое, но с указанием относительного пути в архиве.</li>
-<li><a href="#extract">Extract(outputPath)</a> - Извлекает всё содержимое архива в указанный каталог.</li>
-<li><a href="#extractfiles">ExtractFiles(path, dirInArchive, outputPath)</a> - Извлекает файл из подкаталога архива.</li>
-<li><a href="#listfiles">ListFiles()</a> - Возвращает список всех файлов в архиве.</li>
+<li>
+<p><a href="#getversion"><strong>GetVersion()</strong></a><br />
+    Возвращает версию библиотеки.</p>
+</li>
+<li>
+<p><a href="#geterror"><strong>GetError()</strong></a><br />
+    Возвращает текст последней ошибки.</p>
+</li>
+<li>
+<p><a href="#save"><strong>Save()</strong></a><br />
+    Заглушка: метод возвращает 1, если архив открыт.</p>
+</li>
+<li>
+<p><a href="#close"><strong>Close()</strong></a><br />
+    Закрывает архив и освобождает ресурсы.</p>
+</li>
+<li>
+<p><a href="#charset"><strong>CharSet</strong></a><br />
+    Свойство с геттером и сеттером. Кодировка для имён файлов.</p>
+</li>
+<li>
+<p><a href="#compressionlevel"><strong>CompressionLevel</strong></a><br />
+    Свойство с геттером и сеттером. Уровень сжатия (0 — без сжатия, 1 — сжатие).</p>
+</li>
+<li>
+<p><a href="#setcompressionlevel"><strong>SetCompressionLevel(level)</strong></a><br />
+    Устанавливает уровень сжатия (0 — без сжатия, 1 — сжатие).</p>
+</li>
+<li>
+<p><a href="#createarchive"><strong>CreateArchive(path)</strong></a><br />
+    Создаёт новый ZIP-архив, удаляя старый при наличии.</p>
+</li>
+<li>
+<p><a href="#openarchive"><strong>OpenArchive(path, access)</strong></a><br />
+    Открывает архив с доступом на чтение.</p>
+</li>
+<li>
+<p><a href="#openorcreate"><strong>OpenOrCreate(path)</strong></a><br />
+    Открывает существующий архив или создаёт новый.</p>
+</li>
+<li>
+<p><a href="#addfileaddfiles"><strong>AddFiles(path)</strong></a><br />
+    Добавляет файлы по маске (*.ext) в корень архива.</p>
+</li>
+<li>
+<p><a href="#addfileaddfiles"><strong>AddFile(path)</strong></a><br />
+    То же самое, что AddFiles().</p>
+</li>
+<li>
+<p><a href="#addfilestopath"><strong>AddFilesToPath(path, pathInArchive)</strong></a><br />
+    Добавляет файлы с указанием папки в архиве.</p>
+</li>
+<li>
+<p><a href="#adddirectory"><strong>AddDirectory(path)</strong></a><br />
+    Добавляет все файлы и папки из указанной директории.</p>
+</li>
+<li>
+<p><a href="#adddirectorytopath"><strong>AddDirectoryToPath(path, pathInArchive)</strong></a><br />
+    То же самое, но с указанием относительного пути в архиве.</p>
+</li>
+<li>
+<p><a href="#extract"><strong>Extract(outputPath)</strong></a><br />
+    Извлекает всё содержимое архива в указанный каталог.</p>
+</li>
+<li>
+<p><a href="#extractfiles"><strong>ExtractFiles(path, dirInArchive, outputPath)</strong></a><br />
+    Извлекает файл из подкаталога архива.</p>
+</li>
+<li>
+<p><a href="#listfiles"><strong>ListFiles()</strong></a><br />
+    Возвращает список всех файлов в архиве.</p>
+</li>
 </ul>
 <h3 id="getversion">GetVersion</h3>
 <p>Возвращает текующую версию библиотеки</p>
