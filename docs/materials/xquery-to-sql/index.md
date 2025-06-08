@@ -616,6 +616,50 @@
 	order by t_elem.id 
 	```
 
+### Запрос с поиском через contains = false()
+
+**XQuery**
+
+=== "649 + MSSQL"
+	```XQuery
+	for 
+		$elem in collaborators 
+	where 
+		contains($elem/fullname, 'уланов') = false() 
+	return 
+		$elem/Fields('id', 'fullname') 
+	```
+=== "906 + PostgreSQL"
+	```XQuery
+	for 
+		$elem in collaborators 
+	where 
+		contains($elem/fullname, 'уланов') = false() 
+	return 
+		$elem/Fields('id', 'fullname') 
+	```
+
+**SQL**
+
+=== "649 + MSSQL"
+	```sql
+	select	t_elem.[id],
+			t_elem.[fullname]
+	from	dbo.[collaborators] t_elem
+	where	not (t_elem.[fullname] like '%уланов%') 
+			or t_elem.[fullname] is null
+	```
+=== "906 + PostgreSQL"
+	```sql
+	select	t_elem."id",
+			t_elem."fullname"
+	from	dbo."collaborators" t_elem
+	where	not (t_elem."fullname" ilike '%ульянова%') 
+			or t_elem."fullname" is null
+	order by	t_elem.id
+	```
+
+
 ### Запрос с поиском через doc-contains
 
 !!! warning "Важно"
@@ -1432,6 +1476,96 @@
 	order by t_elem.id 
 	```
 
+### Запрос с использованием MatchSome() = false()
+
+**XQuery**
+
+=== "649 + MSSQL"
+	```XQuery
+	for 
+		$elem in collaborators 
+	where 
+		MatchSome($elem/code, ('13744', '386792')) = false() 
+	return 
+		$elem/Fields('id') 
+	```
+=== "906 + PostgreSQL"
+	```XQuery
+	for 
+		$elem in collaborators 
+	where 
+		MatchSome($elem/code, ('13744', '386792')) = false() 
+	return 
+		$elem/Fields('id') 
+	```
+
+**SQL**
+
+=== "649 + MSSQL"
+	!!! failure "ОШИБКА"
+		Запрос не работает в Microsoft SQL Server 2016 (RTM) - 13.0.1601.5 (X64)
+
+	```sql
+	select	t_elem.[id] 
+	from	dbo.[collaborators] t_elem  
+	where	(((t_elem.[code] in ('13744','386792'))=0) OR (((t_elem.[code] in ('13744','386792'))) IS NULL))
+	```
+=== "906 + PostgreSQL"
+	```sql
+	select	t_elem."id", t_elem."code"
+	from	dbo."collaborators" t_elem
+	where	((t_elem."code" in ('13744','386792'))=false) 
+		OR  ((t_elem."code" in ('13744','386792'))) IS NULL
+	order by t_elem.id
+	```
+
+### Запрос с исключением записей через MatchSome и ljoin()
+
+!!! warning "Важно"
+	Обратите внимание на порядок таблиц в `XQuery` запросе и в каком порядке они оказались собраны в `SQL` запросе, `ljoin` джойнит правую таблицу `collaborators` к левой `collaborators`
+
+**XQuery**
+
+=== "649 + MSSQL"
+	```XQuery
+	for 
+		$el in collaborators ljoin $elem in collaborators 
+			on $elem/id = $el/id and MatchSome($el/code, ('13744', '386792')) 
+	where 
+		$el/id = null() 
+	return 
+		$elem/Fields('id') 
+	```
+=== "906 + PostgreSQL"
+	```XQuery
+	for 
+		$elem_ex in collaborators ljoin $elem in collaborators 
+			on $elem_ex/id = $elem/id and MatchSome($elem_ex/code, ('13744', '386792')) 
+	where 
+		$elem_ex/id = null() 
+	return 
+		$elem/Fields('id', 'fullname') 
+	```
+
+**SQL**
+
+=== "649 + MSSQL"
+	```sql
+	select	t_elem.[id] 
+	from	dbo.[collaborators] t_elem 
+		LEFT JOIN dbo.[collaborators] t_el on t_elem.[id]= t_el.[id] and (t_el.[code] in ('13744', '386792')) 
+	where	t_el.[id] IS NULL 
+	```
+=== "906 + PostgreSQL"
+	```sql
+	select	t_elem."id", 
+			t_elem."fullname" 
+	from	dbo."collaborators" t_elem 
+			LEFT JOIN dbo."collaborators" t_elem_ex on t_elem_ex."id"= t_elem."id" and (t_elem_ex."code" in ('13744','386792')) 
+	where	t_elem_ex."id" IS NULL 
+	order by t_elem_ex.id 
+	```
+
 ### Запрос с использованием CatalogHierSubset()
 
 **XQuery**
@@ -1784,52 +1918,6 @@
 	where	(t_elem."code" in ('13744','386792')) 
 	```
 
-### Запрос с исключением записей через MatchSome
-
-!!! warning "Важно"
-	Обратите внимание на порядок таблиц в `XQuery` запросе и в каком порядке они оказались собраны в `SQL` запросе, `ljoin` джойнит правую таблицу `collaborators` к левой `collaborators`
-
-**XQuery**
-
-=== "649 + MSSQL"
-	```XQuery
-	for 
-		$el in collaborators ljoin $elem in collaborators 
-			on $elem/id = $el/id and MatchSome($el/code, ('13744', '386792')) 
-	where 
-		$el/id = null() 
-	return 
-		$elem/Fields('id') 
-	```
-=== "906 + PostgreSQL"
-	```XQuery
-	for 
-		$elem_ex in collaborators ljoin $elem in collaborators 
-			on $elem_ex/id = $elem/id and MatchSome($elem_ex/code, ('13744', '386792')) 
-	where 
-		$elem_ex/id = null() 
-	return 
-		$elem/Fields('id', 'fullname') 
-	```
-
-**SQL**
-
-=== "649 + MSSQL"
-	```sql
-	select	t_elem.[id] 
-	from	dbo.[collaborators] t_elem 
-		LEFT JOIN dbo.[collaborators] t_el on t_elem.[id]= t_el.[id] and (t_el.[code] in ('13744', '386792')) 
-	where	t_el.[id] IS NULL 
-	```
-=== "906 + PostgreSQL"
-	```sql
-	select	t_elem."id", 
-			t_elem."fullname" 
-	from	dbo."collaborators" t_elem 
-			LEFT JOIN dbo."collaborators" t_elem_ex on t_elem_ex."id"= t_elem."id" and (t_elem_ex."code" in ('13744','386792')) 
-	where	t_elem_ex."id" IS NULL 
-	order by t_elem_ex.id 
-	```
 
 ### Запрос с формированием уникального списка DISTINCT
 
