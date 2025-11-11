@@ -28,9 +28,15 @@ $ pip --version
 pip 25.1.1 from C:\Python313\Lib\site-packages\pip (python 3.13)
 ```
 
+Устанавливаем окружение
+```bash
+$ python -m venv venv
+$ source venv/bin/activate
+```
+
 Устанавливаем mkdocs, инструкции для Windows
 ```bash
-$ python -m pip install mkdocs
+$ pip install mkdocs
 ```
 
 Проверяем весрию mkdocs
@@ -41,15 +47,15 @@ mkdocs, version 1.6.1 from C:\Python313\Lib\site-packages\mkdocs (Python 3.13)
 
 Устанавливаем Material
 ```bash
-$ python -m pip install mkdocs-material
+$ pip install mkdocs-material
 ```
 
 Запускаем live-server проекта
 ```bash
-$ npm run start
+$ mkdocs serve
 ```
 
 Публикуем на GitHubPage
 ```bash
-$ npm run publish
+$ mkdocs gh-deploy
 ```

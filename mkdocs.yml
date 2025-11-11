@@ -1,6 +1,5 @@
 # Project information
 site_name: WebSoft Guide
-site_url: https://www.zgskn.ru/
 site_author: Vladislav Zagoskin
 
 # Repository
@@ -8,7 +7,7 @@ repo_name: heimdall/websoft-guide
 repo_url: https://github.com/GaliFrey/websoft-guide.git
 
 # Copyright
-copyright: Copyright &copy; 2021 - 2024 Vladislav Zagoskin
+copyright: Copyright &copy; 2021 - 2025 Vladislav Zagoskin
 
 # Configuration
 theme:
@@ -46,6 +45,14 @@ markdown_extensions:
       alternate_style: true
   - admonition
   - pymdownx.details
+  - pymdownx.mark
+  - pymdownx.critic
+  - pymdownx.caret
+  - pymdownx.keys
+  - pymdownx.mark
+  - pymdownx.tilde
+  - attr_list
+  - md_in_html
 
 # Page tree
 nav:
@@ -58,6 +65,8 @@ nav:
     - .Net библиотеки:
       - WebSoft.Zip.dll: materials/dotnet-websoft-zip/index.md
       - WebSoft.RegExp.dll: materials/dotnet-websoft-regexp/index.md
+    - WebSocket:
+      - WebSocket'ы в WebTutor: materials/websocket-tutorial/index.md
   - Разработки:
     - Выполнение скриптов при запуске сервера: developments/server_startup_scripts/index.md
     - Отслеживаем данные о перезагрузке сервера: developments/server_restart_info/index.md
